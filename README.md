@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+And this project is based on [Level Up Tutorials](https://leveluptutorials.com/) [Reach for Everyone](https://leveluptutorials.com/tutorials/react-for-everyone/understanding-components) course.
+
 ## Available Scripts
 
 In the project directory, you can run:

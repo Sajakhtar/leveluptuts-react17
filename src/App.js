@@ -6,17 +6,17 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Leveluptuts React17</h1>
-        <HelloWorld />
-        <HelloWorld />
-        <HelloWorld />
+        <HelloWorld name="World" />
+        <HelloWorld name="React" />
+        <HelloWorld name="Jamstack" />
       </header>
     </div>
   );
 }
 
-function HelloWorld() {
+function HelloWorld(props) {
   return (
-      <h2>Hello World</h2>
+      <h2>Hello {props.name}</h2>
   );
 }
 

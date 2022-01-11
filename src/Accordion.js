@@ -13,11 +13,13 @@ export function Accordion() {
 
   return (
       <div>
-        {/* most commong approach */}
+        {/* most commong approach is && trick*/}
         {/* { isToggled && <h3>Show me</h3> } */}
 
-        {/* other approaches */}
+        {/* other approaches are using ternary operator */}
         {/* { isToggled ? <h3>Show me</h3> : null} */}
+
+        {/* or a variable */}
         {showMe}
         <button onClick={() => setIsToggled(!isToggled)}>Toggle</button>
       </div>

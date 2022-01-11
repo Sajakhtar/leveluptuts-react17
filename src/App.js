@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
 
@@ -18,6 +19,11 @@ function HelloWorld({ greeting = "Hello", name }) {
   return (
       <h2>{greeting} {name}</h2>
   );
+}
+
+HelloWorld.propTypes = {
+  name: PropTypes.string,
+  greeting: PropTypes.string
 }
 
 export default App;

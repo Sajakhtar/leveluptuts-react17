@@ -11,7 +11,8 @@ export function Accordion() {
 
   return (
       <div>
-        { isToggled && <h3>Show me</h3> }
+        {/* { isToggled && <h3>Show me</h3> } */}
+        { isToggled ? <h3>Show me</h3> : null}
         <button onClick={() => setIsToggled(!isToggled)}>Toggle</button>
       </div>
   );

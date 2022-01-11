@@ -5,6 +5,12 @@ const movies = [
   { name: "Jurassic Park", id: 2},
   { name: "Green Book", id: 3},
   { name: "Dune", id: 4},
+  { name: "Spiderman", id: 5},
+  { name: "Harry Potter", id: 6},
+  { name: "Batman", id: 7},
+  { name: "Toy Story", id: 8},
+  { name: "Venom", id: 9},
+  { name: "Apollo 13", id: 10},
 ]
 
 export function MoviesList() {
@@ -13,7 +19,10 @@ export function MoviesList() {
 
   return (
     <div>
-      <input value={filter} onChange={(e) => setFilter(e.target.value)}/>
+      <label>
+        Search Movies <br/>
+        <input value={filter} onChange={(e) => setFilter(e.target.value)}/>
+      </label>
       <ul>
         {/* <li>Spiderman</li>
         <li>Ironman</li>

@@ -27,9 +27,7 @@ export function MoviesList() {
         })} */}
 
         {movies
-          .filter((movie) => {
-            return movie.name.toLowerCase().includes(filter.toLowerCase())
-          })
+          .filter((movie) => movie.name.toLowerCase().includes(filter.toLowerCase()))
           .map((movie) => {
           return (
             <li key={movie.id}>{movie.name}</li>

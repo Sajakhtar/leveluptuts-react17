@@ -9,10 +9,16 @@ export function Accordion() {
   //  const [ state, setState ] = useState(defaultState);
   const [ isToggled, setIsToggled ] = useState(false);
 
+  const showMe = isToggled ? (<h3>Show me</h3>) : null;
+
   return (
       <div>
+        {/* most commong approach */}
         {/* { isToggled && <h3>Show me</h3> } */}
-        { isToggled ? <h3>Show me</h3> : null}
+
+        {/* other approaches */}
+        {/* { isToggled ? <h3>Show me</h3> : null} */}
+        {showMe}
         <button onClick={() => setIsToggled(!isToggled)}>Toggle</button>
       </div>
   );

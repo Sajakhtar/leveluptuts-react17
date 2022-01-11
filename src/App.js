@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { Counter } from './Counter';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <h1>Leveluptuts React17</h1>
+        <Counter />
         <HelloWorld name="World" greeting="Yo" />
         <HelloWorld name="React" />
         <HelloWorld name="Jamstack" />

@@ -8,15 +8,29 @@ const movies = [
 ]
 
 export function MoviesList() {
+
+  const [ filter, setFilter ] = useState("");
+
   return (
     <div>
+      <input value={filter} onChange={(e) => setFilter(e.target.value)}/>
       <ul>
         {/* <li>Spiderman</li>
         <li>Ironman</li>
         <li>Batman</li>
         <li>Superman</li> */}
 
-        {movies.map((movie) => {
+        {/* {movies.map((movie) => {
+          return (
+            <li key={movie.id}>{movie.name}</li>
+          )
+        })} */}
+
+        {movies
+          .filter((movie) => {
+            return movie.name.toLowerCase().includes(filter.toLowerCase())
+          })
+          .map((movie) => {
           return (
             <li key={movie.id}>{movie.name}</li>
           )

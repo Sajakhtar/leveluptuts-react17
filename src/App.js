@@ -9,17 +9,17 @@ import { MoviesList } from './MoviesList';
 function App() {
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <h1>Leveluptuts React17</h1>
+      <header className="App-header">
+        {/* <h1>Leveluptuts React17</h1>
         <Input />
         <Accordion />
         <Counter />
         <HelloWorld name="World" greeting="Yo" />
         <HelloWorld name="React" />
-        <HelloWorld name="Jamstack" />
-      </header> */}
+        <HelloWorld name="Jamstack" /> */}
 
-      <MoviesList />
+        <MoviesList />
+      </header>
     </div>
   );
 }

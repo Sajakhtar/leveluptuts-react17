@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 import './App.css';
 import { Counter } from './Counter';
 import { Accordion } from './Accordion';
+import { Input } from './Input';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <h1>Leveluptuts React17</h1>
-        <Counter />
+        <Input />
         <Accordion />
+        <Counter />
         <HelloWorld name="World" greeting="Yo" />
         <HelloWorld name="React" />
         <HelloWorld name="Jamstack" />

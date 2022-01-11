@@ -7,7 +7,14 @@ export function Input() {
   return (
     <div>
       {/* <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} /> */}
-      <input value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+      {/* basic example */}
+      {/* <input value={inputValue} onChange={(e) => setInputValue(e.target.value)} /> */}
+      <input value={inputValue} onChange={ (e) => {
+        if(!e.target.value.includes("t")) {
+          setInputValue(e.target.value)
+        }
+      }
+      } />
     </div>
 
   );

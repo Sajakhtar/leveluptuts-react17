@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Leveluptuts React17</h1>
-        <HelloWorld name="World" />
+        <HelloWorld name="World" greeting="Yo" />
         <HelloWorld name="React" />
         <HelloWorld name="Jamstack" />
       </header>
@@ -14,9 +14,9 @@ function App() {
   );
 }
 
-function HelloWorld(props) {
+function HelloWorld({ greeting = "Hello", name }) {
   return (
-      <h2>Hello {props.name}</h2>
+      <h2>{greeting} {name}</h2>
   );
 }
 

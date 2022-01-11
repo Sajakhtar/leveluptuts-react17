@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 // import logo from './logo.svg';
 import './App.css';
 import { Counter } from './Counter';
+import { Accordion } from './Accordion';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <header className="App-header">
         <h1>Leveluptuts React17</h1>
         <Counter />
+        <Accordion />
         <HelloWorld name="World" greeting="Yo" />
         <HelloWorld name="React" />
         <HelloWorld name="Jamstack" />

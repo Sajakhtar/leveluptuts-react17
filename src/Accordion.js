@@ -4,18 +4,15 @@ import React, { useState } from "react";
 // State is data that live in component, data updates (dynamic) and allows component to be interactive
 // State could be data from a DB, or accordion/ modal is open or not
 
-export function Counter() {
+export function Accordion() {
 
-  // value of state and updater of state
-  // set default state of count to zero
   //  const [ state, setState ] = useState(defaultState);
-  const [ count, setCount ] = useState(0);
+  const [ isToggled, setIsToggled ] = useState(false);
 
   return (
       <div>
-        <h3>{count}</h3>
-        <button onClick={() => setCount(count - 1)} >-</button>
-        <button onClick={() => setCount(count + 1)} >+</button>
+        { isToggled && <h3>Show me</h3> }
+        <button onClick={() => setIsToggled(!isToggled)}>Toggle</button>
       </div>
   );
 }

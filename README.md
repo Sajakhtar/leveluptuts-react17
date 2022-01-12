@@ -79,3 +79,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 This extention make available 2 additonal tabs within Chrome Developer Tool:
 - Components - here you can see your components (in a tree) and their props, hooks, state, source
 - Profile
+
+
+## Dependancies
+
+```bash
+npm install --save prop-types
+```

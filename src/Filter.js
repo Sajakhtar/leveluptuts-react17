@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // lifting state from MovieList by passing the state and setState as props
 // MovieList is the parent, and Parent needs to own the state
@@ -12,4 +13,10 @@ export function Filter({ filter, setFilter }) {
     </label>
 
   )
+}
+
+
+Filter.propTypes = {
+  filter: PropTypes.string.isRequired,
+  setFilter: PropTypes.func.isRequired
 }

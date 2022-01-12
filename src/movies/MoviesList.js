@@ -1,6 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef,  useEffect } from "react";
 import { Movie } from './Movie';
 import { Filter } from '../Filter';
+
+
+
 
 const movies = [
   { name: "The Godfather", id: 1},
@@ -19,27 +22,40 @@ export function MoviesList() {
 
   const [ filter, setFilter ] = useState("");
 
+  // useEffect hook is the ability to trigger side effects
+  // allows us to tap into component render cycle (lifecfyle methods)
+  // components update when state changes or props change
+  // good for getting data from an API, after which that can be set to state and used by the components
+  // Every time the MoviesList component renders, the useEffect will fire
+  // can tell useEffect when to run with an array containing the effects dependancy
+  // useEffect(() => {}, [])
+  // empty array means effect will fire on first render i.e. on-mount
+  useEffect(() => {
+    console.log('hit effect');
+  }, []);
+
   // useRef is a react hook, typically used to access DOM elements
   // const varName = useRef(initualValue);
   // Assign the ref to a html element, then you can access the DOM element's properties
-  const ulRef = useRef(null);
-  console.log(ulRef);
-  const ref = useRef(null);
+  // const ulRef = useRef(null);
+  // console.log(ulRef);
+  // const ref = useRef(null);
 
   return (
-    <div ref={ulRef}>
+    // <div ref={ulRef}>
+    <div>
 
       {/* useRef on an input is simpler than using useState and onChange to access value of the input.
       But it doesnt control rerenders and you don't have control on the content put in the input.
       Fine to useRef with forms, but trypically most devs useState for controlled inputs/forms
       */}
-      <form onSubmit={(e) => {
+      {/* <form onSubmit={(e) => {
         e.preventDefault();
         console.log(ref.current.value)
       }}>
         <input ref={ref} />
         <button>log value</button>
-      </form>
+      </form> */}
 
       {/* <label>
         Search Movies <br/>

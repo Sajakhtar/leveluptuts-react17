@@ -25,14 +25,16 @@ export function MoviesList() {
   // useEffect hook is the ability to trigger side effects
   // allows us to tap into component render cycle (lifecfyle methods)
   // components update when state changes or props change
-  // good for getting data from an API, after which that can be set to state and used by the components
+  // useful when getting data from an API, i.e. when component loads, we want to fetch data from an API, thens save that data in sate, then display that state
+
   // Every time the MoviesList component renders, the useEffect will fire
   // can tell useEffect when to run with an array containing the effects dependancy
   // useEffect(() => {}, [])
   // empty array means effect will fire on first render i.e. on-mount and when something else is rendered in the DOM, but not when component is updated
+  // useEffect(() => {}, [filter]) will only fire when filter updates
   useEffect(() => {
     console.log('hit effect');
-  }, []);
+  }, [filter]);
 
   // useRef is a react hook, typically used to access DOM elements
   // const varName = useRef(initualValue);

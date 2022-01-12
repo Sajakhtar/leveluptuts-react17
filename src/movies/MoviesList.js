@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Movie } from './Movie';
+import { Filter } from '../Filter';
 
 const movies = [
   { name: "The Godfather", id: 1},
@@ -20,10 +21,13 @@ export function MoviesList() {
 
   return (
     <div>
-      <label>
+      {/* <label>
         Search Movies <br/>
         <input value={filter} onChange={(e) => setFilter(e.target.value)}/>
-      </label>
+      </label> */}
+
+      <Filter filter={filter} setFilter={setFilter} />
+
       <ul>
         {/* <li>Spiderman</li>
         <li>Ironman</li>

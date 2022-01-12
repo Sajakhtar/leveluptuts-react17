@@ -29,7 +29,7 @@ export function MoviesList() {
   // Every time the MoviesList component renders, the useEffect will fire
   // can tell useEffect when to run with an array containing the effects dependancy
   // useEffect(() => {}, [])
-  // empty array means effect will fire on first render i.e. on-mount
+  // empty array means effect will fire on first render i.e. on-mount and when something else is rendered in the DOM, but not when component is updated
   useEffect(() => {
     console.log('hit effect');
   }, []);

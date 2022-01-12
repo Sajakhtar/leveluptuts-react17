@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Movie } from './Movie';
 import { Filter } from '../Filter';
 
@@ -19,8 +19,28 @@ export function MoviesList() {
 
   const [ filter, setFilter ] = useState("");
 
+  // useRef is a react hook, typically used to access DOM elements
+  // const varName = useRef(initualValue);
+  // Assign the ref to a html element, then you can access the DOM element's properties
+  const ulRef = useRef(null);
+  console.log(ulRef);
+  const ref = useRef(null);
+
   return (
-    <div>
+    <div ref={ulRef}>
+
+      {/* useRef on an input is simpler than using useState and onChange to access value of the input.
+      But it doesnt control rerenders and you don't have control on the content put in the input.
+      Fine to useRef with forms, but trypically most devs useState for controlled inputs/forms
+      */}
+      <form onSubmit={(e) => {
+        e.preventDefault();
+        console.log(ref.current.value)
+      }}>
+        <input ref={ref} />
+        <button>log value</button>
+      </form>
+
       {/* <label>
         Search Movies <br/>
         <input value={filter} onChange={(e) => setFilter(e.target.value)}/>

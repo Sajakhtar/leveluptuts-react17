@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Movie } from './Movie';
 
 const movies = [
   { name: "The Godfather", id: 1},
@@ -35,9 +36,14 @@ export function MoviesList() {
           )
         })} */}
 
-        {movies
+        {/* {movies
           .filter((movie) => movie.name.toLowerCase().includes(filter.toLowerCase()))
           .map((movie) => (<li key={movie.id}>{movie.name}</li>))
+        } */}
+
+        {movies
+          .filter((movie) => movie.name.toLowerCase().includes(filter.toLowerCase()))
+          .map((movie) => (<Movie key={movie.id} movie={movie}/>))
         }
       </ul>
     </div>

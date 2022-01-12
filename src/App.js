@@ -4,7 +4,7 @@ import './App.css';
 // import { Counter } from './Counter';
 // import { Accordion } from './Accordion';
 // import { Input } from './Input';
-import { MoviesList } from './MoviesList';
+import { MoviesList } from './movies/MoviesList';
 
 function App() {
   return (

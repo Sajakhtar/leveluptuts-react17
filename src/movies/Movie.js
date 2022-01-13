@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-export function Movie({ movie }) {
+export function Movie({ movie, config }) {
 
   // useEffect(() => {
   //   console.log(movie.name);
@@ -10,7 +10,9 @@ export function Movie({ movie }) {
 
   return (
     <li>
-      <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title + " Poster"} />
+      { config.images?.base_url && (
+        <img src={config.images.base_url + config.images.poster_sizes[1] + movie.poster_path} alt={movie.title + " Poster"} />
+      )}
       <h3>{movie.title}</h3>
     </li>
   )

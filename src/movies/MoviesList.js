@@ -20,11 +20,13 @@ import { Filter } from '../Filter';
 
 const key = process.env.REACT_APP_TMDB_KEY;
 const API_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`;
+const CONFIG_URL = `https://api.themoviedb.org/3/configuration?api_key=${key}`
 
 export function MoviesList() {
 
   const [ filter, setFilter ] = useState("");
   const [ movies, setMovies ] = useState([]);
+  const [ config, setConfig ] = useState({});
 
   // useEffect hook is the ability to trigger side effects
   // allows us to tap into component render cycle (lifecfyle methods)
@@ -52,7 +54,17 @@ export function MoviesList() {
       const res = await fetch(API_URL);
       const data = await res.json();
       setMovies(data.results);
-      console.log('movies', movies);
+      // console.log('movies', movies);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+    const getConfig = async () => {
+    try {
+      const res = await fetch(CONFIG_URL);
+      const data = await res.json();
+      setConfig(data);
     } catch (e) {
       console.error(e);
     }
@@ -61,6 +73,7 @@ export function MoviesList() {
   // getMovies() on initial page load / on-mount
   // can't place getMovites() outside use effect, else it'll hit the API every time this component rerenders
   useEffect(() => {
+    getConfig();
     getMovies();
   }, []);
 
@@ -115,7 +128,7 @@ export function MoviesList() {
 
         {movies
           .filter((movie) => movie.title.toLowerCase().includes(filter.toLowerCase()))
-          .map((movie) => (<Movie key={movie.id} movie={movie}/>))
+          .map((movie) => (<Movie key={movie.id} config={config} movie={movie}/>))
         }
       </ul>
     </div>

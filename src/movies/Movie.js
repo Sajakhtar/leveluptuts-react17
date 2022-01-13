@@ -3,19 +3,19 @@ import PropTypes from 'prop-types';
 
 export function Movie({ movie }) {
 
-  useEffect(() => {
-    console.log(movie.name);
-  }, []);
+  // useEffect(() => {
+  //   console.log(movie.name);
+  // }, []);
 
 
   return (
-    <li>{movie.name}</li>
+    <li>{movie.title}</li>
   )
 }
 
 Movie.propTypes = {
   movie: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired
   }).isRequired
 }

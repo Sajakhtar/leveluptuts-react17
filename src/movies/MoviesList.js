@@ -104,7 +104,7 @@ export function MoviesList() {
       State flows downwards from Parent to Child in component tree
       useContext Hook is the alternative, to manipulate state from anywhere in component tree */}
 
-      <ul>
+      <ul className="movies-list">
         {/* <li>Spiderman</li>
         <li>Ironman</li>
         <li>Batman</li>

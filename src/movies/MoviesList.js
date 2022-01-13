@@ -58,7 +58,8 @@ export function MoviesList() {
     }
   }
 
-  // getMovies on initial page load
+  // getMovies() on initial page load / on-mount
+  // can't place getMovites() outside use effect, else it'll hit the API every time this component rerenders
   useEffect(() => {
     getMovies();
   }, []);

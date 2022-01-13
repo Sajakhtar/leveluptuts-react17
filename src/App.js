@@ -9,7 +9,7 @@ import { MoviesList } from './movies/MoviesList';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header"> */}
         {/* <h1>Leveluptuts React17</h1>
         <Input />
         <Accordion />
@@ -19,7 +19,7 @@ function App() {
         <HelloWorld name="Jamstack" /> */}
 
         <MoviesList />
-      </header>
+      {/* </header> */}
     </div>
   );
 }

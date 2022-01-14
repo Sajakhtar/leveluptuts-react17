@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 export function Movie({ movie, config }) {
 
@@ -10,10 +11,12 @@ export function Movie({ movie, config }) {
 
   return (
     <li>
-      { config.images?.base_url && (
-        <img src={config.images.base_url + config.images.poster_sizes[3] + movie.poster_path} alt={movie.title + " Poster"} />
-      )}
-      <h3>{movie.title}</h3>
+      <Link to="/details">
+        { config.images?.base_url && (
+          <img src={config.images.base_url + config.images.poster_sizes[3] + movie.poster_path} alt={movie.title + " Poster"} />
+          )}
+        <h3>{movie.title}</h3>
+      </Link>
     </li>
   )
 }

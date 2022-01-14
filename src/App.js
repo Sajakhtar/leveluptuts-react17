@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
 // import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import { Counter } from './Counter';
 // import { Accordion } from './Accordion';
 // import { Input } from './Input';
 import { MoviesList } from './movies/MoviesList';
+import { MovieDetail } from './movies/MovieDetail';
 
 function App() {
   return (
@@ -18,7 +20,15 @@ function App() {
         <HelloWorld name="React" />
         <HelloWorld name="Jamstack" /> */}
 
-        <MoviesList />
+        <Router>
+          <Routes>
+            {/* <Route path="/">
+              <MoviesList />
+            </Route> */}
+            <Route path='/' element={<MoviesList/>} />
+            <Route path='/details' element={<MovieDetail/>} />
+          </Routes>
+        </Router>
       {/* </header> */}
     </div>
   );

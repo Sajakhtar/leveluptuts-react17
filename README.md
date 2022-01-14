@@ -101,3 +101,12 @@ API URL for Discover Movies: `https://api.themoviedb.org/3/discover/movie?api_ke
 API URL for Config: `https://api.themoviedb.org/3/configuration?api_key=<<api_key>>`
 
 Image path stem: `https://image.tmdb.org/t/p/w500/`
+
+
+## [React Router](https://reactrouter.com/)
+
+Install react router version for websites:
+
+```bash
+npm install --save react-router-dom
+```

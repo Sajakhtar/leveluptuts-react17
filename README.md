@@ -102,6 +102,9 @@ API URL for Config: `https://api.themoviedb.org/3/configuration?api_key=<<api_ke
 
 Image path stem: `https://image.tmdb.org/t/p/w500/`
 
+### [Movie endpoint](https://developers.themoviedb.org/3/movies/get-movie-details)
+
+API URL for a movie: `https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US`
 
 ## [React Router](https://reactrouter.com/)
 

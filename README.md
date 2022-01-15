@@ -145,3 +145,4 @@ But, since we're using `create-react-app` we can utilize its built in capability
 - [Blits.js](https://blitzjs.com/)
   - "Zero API" data layer built on Next.js, inspired by Ruby on Rails
   - i.e. no need for rest or GraphQL
+  - fullstack functionality

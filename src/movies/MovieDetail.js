@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 // useParams is 3rd party hook
 import { useParams } from 'react-router-dom';
-import { MoviesList } from './MoviesList';
+// import { MoviesList } from './MoviesList';
 
 
 const key = process.env.REACT_APP_TMDB_KEY;
@@ -59,11 +60,15 @@ export function MovieDetail() {
           <img className="detail-poster" src={config.images.base_url + config.images.poster_sizes[3] + movie.poster_path} alt={movie.title + " Poster"} />
           )}
 
-        <h1>{movie.title}</h1>
-        <p>{movie.overview}</p>
-        <ul>
-          {movie.genres.map((genre) => <li key={genre.id} >{genre.name}</li>)}
-        </ul>
+        <div>
+          <Link className="btn-back" to="/">Back</Link>
+          <h1>{movie.title}</h1>
+          <p>{movie.overview}</p>
+          <ul>
+            {movie.genres.map((genre) => <li key={genre.id} >{genre.name}</li>)}
+          </ul>
+        </div>
+
       </div>
 
     </div>

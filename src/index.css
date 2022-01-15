@@ -33,7 +33,7 @@ input {
 }
 
 .detail-details {
-  background: white;
+  background: rgba(230,230,230,0.9);;
   position: relative;
   z-index: 10;
   color: #333;

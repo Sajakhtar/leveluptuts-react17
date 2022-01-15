@@ -7,10 +7,13 @@ import { MoviesList } from './MoviesList';
 
 
 const key = process.env.REACT_APP_TMDB_KEY;
+const CONFIG_URL = `https://api.themoviedb.org/3/configuration?api_key=${key}`
+
 
 export function MovieDetail() {
 
   const [ movie, setMovie ] = useState({});
+  const [ config, setConfig ] = useState({});
 
   const { id } = useParams();
 
@@ -27,7 +30,18 @@ export function MovieDetail() {
     }
   }
 
+  const getConfig = async () => {
+    try {
+      const res = await fetch(CONFIG_URL);
+      const data = await res.json();
+      setConfig(data);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
   useEffect(() => {
+    getConfig();
     getMovie();
   }, [id]);
 
@@ -36,11 +50,22 @@ export function MovieDetail() {
 
   return (
     <div>
-      <h1>{movie.title}</h1>
-      <p>{movie.overview}</p>
-      <ul>
-        {movie.genres.map((genre) => <li key={genre.id} >{genre.name}</li>)}
-      </ul>
+      { config.images?.base_url && (
+          <img className="backdrop" src={config.images.base_url + config.images.backdrop_sizes[3] + movie.backdrop_path} alt={movie.title + " Backdrop"} />
+      )}
+
+      <div className="detail-details">
+        { config.images?.base_url && (
+          <img className="detail-poster" src={config.images.base_url + config.images.poster_sizes[3] + movie.poster_path} alt={movie.title + " Poster"} />
+          )}
+
+        <h1>{movie.title}</h1>
+        <p>{movie.overview}</p>
+        <ul>
+          {movie.genres.map((genre) => <li key={genre.id} >{genre.name}</li>)}
+        </ul>
+      </div>
+
     </div>
   )
 }

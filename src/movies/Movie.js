@@ -14,8 +14,8 @@ export function Movie({ movie, config }) {
       <Link to={`/movie/${movie.id}`}>
         { config.images?.base_url && (
           <img src={config.images.base_url + config.images.poster_sizes[3] + movie.poster_path} alt={movie.title + " Poster"} />
-          )}
-        <h3>{movie.title}</h3>
+        )}
+        {/* <h3>{movie.title}</h3> */}
       </Link>
     </li>
   )

@@ -60,7 +60,7 @@ export function MoviesList() {
     }
   }
 
-    const getConfig = async () => {
+  const getConfig = async () => {
     try {
       const res = await fetch(CONFIG_URL);
       const data = await res.json();

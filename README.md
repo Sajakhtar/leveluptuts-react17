@@ -113,3 +113,35 @@ Install react router version for websites:
 ```bash
 npm install --save react-router-dom
 ```
+
+## Environment Variables
+
+Typically install `donenv` and reference as `process.env.VAR_NAME`.
+
+```bash
+npm i donenv
+```
+
+But, since we're using `create-react-app` we can utilize its built in capability by starting environemt variable names as `REACT_APP_`, then rereference them as `process.env.REACT_APP_VAR_NAME`.
+
+
+## React Frameworks
+
+- [Gatsby](https://www.gatsbyjs.com/)
+  - Most powerful for static sites, i.e. without User Authentication
+  - ships HTML, CSS, JS to give the fastest sites possible
+- [Next.js](https://nextjs.org/)
+  - Most widely used React framework
+  - Provides server side rendering on demand via serverside functions, meaning that sites are fast, SEO friendly and extendable/ buildable for the futre
+  - created by Vercel, which are now supporting Svelte ecosystem e.g. Sveltekit
+- [Meteor](https://www.meteor.com/)
+  - Meteor gives you everything you need, where as Next.js and Gatsby are primarily for frontend, Meteor gives serverside components, database, user authentication/ accounts out of the box
+  - fullstack functionality
+- [RedwoodJS](https://redwoodjs.com/)
+  - Still in development
+  - includes GraphQL API, Prisma modelling tool to interact with DB
+  - better for advanced users
+  - fullstack functionality
+- [Blits.js](https://blitzjs.com/)
+  - "Zero API" data layer built on Next.js, inspired by Ruby on Rails
+  - i.e. no need for rest or GraphQL

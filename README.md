@@ -146,3 +146,10 @@ But, since we're using `create-react-app` we can utilize its built in capability
   - "Zero API" data layer built on Next.js, inspired by Ruby on Rails
   - i.e. no need for rest or GraphQL
   - fullstack functionality
+
+
+## Class Components
+
+Thus far we've utilized function based components, but old code bases may have class based components as older versions of react used a class based syntax. Hooks and Functional Components are definitively declared to be the future.
+
+Learn about class based components in [React 16 for everyone](https://leveluptutorials.com/tutorials/react-16-for-everyone/create-react-app-and-initial-files-explained)
